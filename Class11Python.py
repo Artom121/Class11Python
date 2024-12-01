@@ -51,7 +51,6 @@ class Note:
         note.timestamp = data['timestamp']
         return note
 
-
 class Task:
     def __int__(self, title, description, priority, due_date):
         self.id = random.randint(1000000000, 9999999999)
@@ -76,3 +75,33 @@ class Task:
         task.id = data['id']
         task.done = data['done']
         return task
+
+class Contact:
+    def __int__(self, name, phone, email):
+        self.id = random.randint(1000000000, 9999999999)
+        self.name = name
+        self.phone = phone
+        self.email = email
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'description': self.description,
+            'done': self.done,
+            'priority': self.priority,
+            'due_date': self.due_date
+        }
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "phone": self.phone,
+            "email": self.email
+        }
+
+    def from_dict(data):
+        contact = Contact(data['name'], data['phone'], data['email'])
+        contact.id = data['id']
+        return contact
