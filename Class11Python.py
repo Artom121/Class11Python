@@ -1,34 +1,34 @@
 import json, csv, random
 from datetime import datetime
 
-def manage_notes():
-    while True:
-        print("""
-Добро пожаловать в Персональный помощник!
-Выберите действие:
-1. Управление заметками
-2. Управление задачами
-3. Управление контактами
-4. Управление финансовыми записями
-5. Калькулятор
-6. Выход
-        """)
-        choice = input("Выберете действие: ")
-
-        if choice = '1':
-            ...
-        elif choice = '2':
-            ...
-        elif choice = '3':
-            ...
-        elif choice = '4':
-            ...
-        elif choice = '5':
-            ...
-        elif choice = '6':
-            ...
-        elif choice = '7':
-            break
+# def manage_notes():
+#     while True:
+#         print("""
+# Добро пожаловать в Персональный помощник!
+# Выберите действие:
+# 1. Управление заметками
+# 2. Управление задачами
+# 3. Управление контактами
+# 4. Управление финансовыми записями
+# 5. Калькулятор
+# 6. Выход
+#         """)
+#         choice = input("Выберете действие: ")
+#
+#         if choice = '1':
+#             ...
+#         elif choice = '2':
+#             ...
+#         elif choice = '3':
+#             ...
+#         elif choice = '4':
+#             ...
+#         elif choice = '5':
+#             ...
+#         elif choice = '6':
+#             ...
+#         elif choice = '7':
+#             break
 
 class Note:
     def __int__(self, title, content):
@@ -127,3 +127,21 @@ class FinanceRecord:
         record = FinanceRecord(data['amount'], data['category'], data['date'], data['description'])
         record.id = data['id']
         return record
+
+
+def main_menu():
+    print("Добро пожаловать в Персональный помощник!")
+    print("Выберите действие:")
+    print("1. Управление заметками")
+    print("2. Управление задачами")
+    print("3. Управление контактами")
+    print("4. Управление финансовыми записями")
+    print("5. Калькулятор")
+    print("6. Выход")
+
+    choice = input("Введите номер действия: ")
+    return choice
+
+
+if __name__ == "__main__":
+    main()
