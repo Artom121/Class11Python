@@ -105,3 +105,25 @@ class Contact:
         contact = Contact(data['name'], data['phone'], data['email'])
         contact.id = data['id']
         return contact
+
+class FinanceRecord:
+    def __init__(self, amount, category, date, description):
+        self.id = random.randint(1000000000, 9999999999)
+        self.amount = amount
+        self.category = category
+        self.date = date
+        self.description = description
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "amount": self.amount,
+            "category": self.category,
+            "date": self.date,
+            "description": self.description
+        }
+
+    def from_dict(data):
+        record = FinanceRecord(data['amount'], data['category'], data['date'], data['description'])
+        record.id = data['id']
+        return record
