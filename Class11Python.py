@@ -143,5 +143,36 @@ def main_menu():
     return choice
 
 
+def calculator():
+    while True:
+        expression = input("Введите выражение для вычисления (или 'выход' для завершения): ")
+        if expression.lower() == 'выход':
+            break
+        try:
+            result = eval(expression)
+            print(f"Результат: {result}")
+        except Exception as e:
+            print(f"Ошибка: {e}")
+
+
+def main():
+    while True:
+        choice = main_menu()
+        if choice == '1':
+            manage_notes()
+        elif choice == '2':
+            manage_tasks()
+        elif choice == '3':
+            manage_contacts()
+        elif choice == '4':
+            manage_finances()
+        elif choice == '5':
+            calculator()
+        elif choice == '6':
+            print("Выход из приложения.")
+            break
+        else:
+            print("Некорректный выбор, попробуйте снова.")
+
 if __name__ == "__main__":
     main()
