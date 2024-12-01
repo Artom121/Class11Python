@@ -51,3 +51,28 @@ class Note:
         note.timestamp = data['timestamp']
         return note
 
+
+class Task:
+    def __int__(self, title, description, priority, due_date):
+        self.id = random.randint(1000000000, 9999999999)
+        self.title = title
+        self.description = description
+        self.done = False
+        self.priority = priority
+        self.due_date = due_date
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'description': self.description,
+            'done': self.done,
+            'priority': self.priority,
+            'due_date': self.due_date
+        }
+
+    def from_dict(data):
+        task = Task(data['title'], data['description'], data['priority'], data['due_date'])
+        task.id = data['id']
+        task.done = data['done']
+        return task
